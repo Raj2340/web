@@ -277,3 +277,30 @@ body{
         width: 100%;
     }
 }
+.login-message {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: oblique;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.success {
+    color: #f4f7f4;
+}
+
+.error {
+    color: #f44336;
+}
+
+.animate {
+    animation: popFade 0.5s ease-in-out;
+}
+
+@keyframes popFade {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
