@@ -33,4 +33,36 @@ registerBtn.addEventListener('click', () => {
 
     document.querySelector(".col-1").style.borderRadius = "0 20% 30% 0";
 })
+const submitLogin = document.querySelector("#submitLogin");
+const usernameInput = document.querySelector("#username");
+const passwordInput = document.querySelector("#password");
+const message = document.querySelector("#message");
+const logoutBtn = document.querySelector("#logoutBtn");
+const logoutContainer = document.querySelector("#logoutContainer");
+
+const validUsername = "rax";
+const validPassword = "2005";
+
+submitLogin.addEventListener("click", () => {
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (username === validUsername && password === validPassword) {
+        message.textContent = "Welcome to the software testing website";
+        message.className = "login-message success animate";
+        logoutContainer.style.display = "block";
+    } else {
+        message.textContent = "Wrong username or password";
+        message.className = "login-message error animate";
+    }
+
+    setTimeout(() => message.classList.remove("animate"), 1000);
+});
+
+logoutBtn.addEventListener("click", () => {
+    usernameInput.value = "";
+    passwordInput.value = "";
+    message.textContent = "";
+    logoutContainer.style.display = "none";
+});
 
